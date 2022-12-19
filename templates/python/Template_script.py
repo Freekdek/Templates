@@ -42,7 +42,9 @@ def template_function(template_input):
     :param template_input:
     :return:
     """
-    print(f"This is a template function with a template parameter: {template_input}")
+    if verbose:
+        print(f"Verbose is given as argument, so now you are given a debug print: \n template_function is adding "
+              f"{template_input} and {template_input} together")
     template_return = template_input + template_input
     return template_return
 
@@ -51,7 +53,7 @@ def template_function(template_input):
 # Call functions here
 
 template_caller = template_function(main_input)
-with open(main_output, "x") as output_file:
+with open(main_output, "w") as output_file:
     output_file.write(template_caller)
 
 # End of script
